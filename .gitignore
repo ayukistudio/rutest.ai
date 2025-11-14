@@ -1,0 +1,38 @@
+# Extension
+extension/node_modules/
+extension/out/
+extension/*.vsix
+extension/.vscode-test/
+
+# Backend
+backend/__pycache__/
+backend/*.pyc
+backend/*.pyo
+backend/*.pyd
+backend/.Python
+backend/env/
+backend/venv/
+backend/ENV/
+backend/.env
+backend/*.egg-info/
+backend/dist/
+backend/build/
+backend/ssl/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Test
+test-cases/
+tests/

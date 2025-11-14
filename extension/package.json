@@ -1,0 +1,190 @@
+{
+  "name": "rutest-ai",
+  "displayName": "RuTest.AI",
+  "description": "AI-powered test case generation for web projects",
+  "version": "0.0.1",
+  "publisher": "rutest",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rutest-ai/rutest-ai"
+  },
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": [
+    "Testing"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "rutest-ai",
+          "title": "RuTest.AI",
+          "icon": "media/icon.png"
+        }
+      ]
+    },
+    "views": {
+      "rutest-ai": [
+        {
+          "type": "webview",
+          "id": "rutest-ai.mainView",
+          "name": "RuTest.AI"
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "rutest-ai.generateTestCases",
+        "title": "Generate Test Cases",
+        "category": "RuTest.AI",
+        "icon": "$(beaker)"
+      },
+      {
+        "command": "rutest-ai.openSettings",
+        "title": "Open Settings",
+        "category": "RuTest.AI",
+        "icon": "$(gear)"
+      }
+    ],
+    "configuration": {
+      "title": "RuTest.AI",
+      "properties": {
+        "rutest-ai.provider": {
+          "type": "string",
+          "default": "openai",
+          "enum": [
+            "openai",
+            "openrouter",
+            "anthropic",
+            "ollama",
+            "llmstudio"
+          ],
+          "description": "LLM Provider"
+        },
+        "rutest-ai.openai.apiKey": {
+          "type": "string",
+          "default": "",
+          "description": "OpenAI API Key"
+        },
+        "rutest-ai.openai.model": {
+          "type": "string",
+          "default": "gpt-4",
+          "description": "OpenAI Model"
+        },
+        "rutest-ai.openrouter.apiKey": {
+          "type": "string",
+          "default": "",
+          "description": "OpenRouter API Key"
+        },
+        "rutest-ai.openrouter.model": {
+          "type": "string",
+          "default": "anthropic/claude-3-opus",
+          "description": "OpenRouter Model"
+        },
+        "rutest-ai.openrouter.baseUrl": {
+          "type": "string",
+          "default": "https://openrouter.ai/api/v1",
+          "description": "OpenRouter Base URL"
+        },
+        "rutest-ai.anthropic.apiKey": {
+          "type": "string",
+          "default": "",
+          "description": "Anthropic API Key"
+        },
+        "rutest-ai.anthropic.model": {
+          "type": "string",
+          "default": "claude-3-opus-20240229",
+          "description": "Anthropic Model"
+        },
+        "rutest-ai.ollama.baseUrl": {
+          "type": "string",
+          "default": "http://localhost:11434",
+          "description": "Ollama Base URL"
+        },
+        "rutest-ai.ollama.model": {
+          "type": "string",
+          "default": "llama2",
+          "description": "Ollama Model"
+        },
+        "rutest-ai.llmstudio.baseUrl": {
+          "type": "string",
+          "default": "http://localhost:1234",
+          "description": "LLM Studio Base URL"
+        },
+        "rutest-ai.llmstudio.model": {
+          "type": "string",
+          "default": "local-model",
+          "description": "LLM Studio Model"
+        },
+        "rutest-ai.backend.url": {
+          "type": "string",
+          "default": "https://ayukidev.ru",
+          "description": "Backend API URL"
+        },
+        "rutest-ai.jira.enabled": {
+          "type": "boolean",
+          "default": false,
+          "description": "Enable Jira Integration"
+        },
+        "rutest-ai.jira.url": {
+          "type": "string",
+          "default": "",
+          "description": "Jira URL"
+        },
+        "rutest-ai.jira.email": {
+          "type": "string",
+          "default": "",
+          "description": "Jira Email"
+        },
+        "rutest-ai.jira.apiToken": {
+          "type": "string",
+          "default": "",
+          "description": "Jira API Token"
+        },
+        "rutest-ai.jira.projectKey": {
+          "type": "string",
+          "default": "",
+          "description": "Jira Project Key"
+        },
+        "rutest-ai.debug.enabled": {
+          "type": "boolean",
+          "default": false,
+          "description": "Enable debug mode (show LLM responses)"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js",
+    "test-connection": "node test-connection.js",
+    "package": "vsce package"
+  },
+  "devDependencies": {
+    "@types/glob": "^8.1.0",
+    "@types/mime-types": "^3.0.1",
+    "@types/mocha": "^10.0.1",
+    "@types/node": "20.2.5",
+    "@types/vscode": "^1.80.0",
+    "@typescript-eslint/eslint-plugin": "^5.59.8",
+    "@typescript-eslint/parser": "^5.59.8",
+    "@vscode/test-electron": "^2.3.2",
+    "@vscode/vsce": "^3.7.0",
+    "eslint": "^8.41.0",
+    "glob": "^8.1.0",
+    "mocha": "^10.2.0",
+    "typescript": "^5.1.3"
+  },
+  "dependencies": {
+    "axios": "^1.13.2"
+  }
+}
