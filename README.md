@@ -2,7 +2,7 @@
 
 <div align="center">
 
-![RuTest.AI Logo](https://raw.githubusercontent.com/ayukistudio/rutest.ai/refs/heads/master/extension/media/icon.png)
+<img src="https://raw.githubusercontent.com/ayukistudio/rutest.ai/refs/heads/master/extension/media/icon.png" alt="RuTest.AI Logo" width="100">
 
 **AI-управляемая генерация тест-кейсов и автоматизированных тестов для веб-проектов**
 
