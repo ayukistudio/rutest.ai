@@ -204,14 +204,6 @@ code --install-extension rutest-ai
 
 ---
 
-## 📞 Поддержка
-
-- **Документация**: [docs.rutest.ai](https://docs.rutest.ai)
-- **Telegram**: [@rutest_ai](https://t.me/rutest_ai)
-- **Email**: support@rutest.ai
-
----
-
 <div align="center">
 
 **Сделано с ❤️ для QA инженеров и разработчиков**
