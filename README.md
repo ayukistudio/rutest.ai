@@ -246,7 +246,7 @@ npm test
 
 ## 🤝 Итоги защиты на консорциуме =)
 
-<img src="https://raw.githubusercontent.com/ayukistudio/rutest.ai/refs/heads/master/result.png" alt="Result Of Hackaton" width="400">
+<img src="https://raw.githubusercontent.com/ayukistudio/rutest.ai/refs/heads/master/result.jpg" alt="Result Of Hackaton" width="400">
 
 Получился может не очень на фотографии, за то приз получили всё же xD
 
